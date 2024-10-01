@@ -1,29 +1,29 @@
-document.getElementById("password").addEventListener("input", function (){
+document.getElementById("password").addEventListener("input", function(){
     const password = this.value;
 
-    const upperCasePattern = /[A-Z]/;
-    const lowerCasePattern = /[a-z]/;
-    const numberPattern = /[0-9]/;
-    const specialCharPattern = /[!@#$%^&*(),.?":{}|<>]/;
+    const maiusculo = /[A-Z]/;
+    const minusculo = /[a-z]/;
+    const numero = /[0-9]/;
+    const simbolo = /[!@#$%^&*(),.?":{}|<>]/;
 
     updateValidation(
         "upperCase",
-        upperCasePattern.test(password)
+        maiusculo.test(password)
     );
 
     updateValidation(
         "lowercase",
-        lowerCasePattern.test(password)
+        minusculo.test(password)
     );
 
     updateValidation(
         "number",
-        numberPattern.test(password)
+        numero.test(password)
     );
 
     updateValidation(
         "specialChar",
-        specialCharPattern.test(password)
+        simbolo.test(password)
     );
 });
 
@@ -44,6 +44,7 @@ function updateValidation(elementId, isValid){
         icon.classList.add("bi-shield-x");
     }
 }
+
 
 
 
